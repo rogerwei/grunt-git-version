@@ -26,10 +26,12 @@ In your project's Gruntfile, add a section named `git_version` to the data objec
 grunt.initConfig({
   git_version: {
     options: {
-      // Task-specific options go here.
+      project: 'project-name',
+      version: 'v3.0.0',
+      short: true
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
+    test: {
+      dest: "test/release.text"
     },
   },
 });
@@ -57,9 +59,13 @@ In this example, the default options are used to do something with whatever. So 
 ```js
 grunt.initConfig({
   git_version: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    options: {
+      project: 'project-name',
+      version: 'v3.0.0',
+      short: true
+    },
+    test: {
+      dest: "test/release.text"
     },
   },
 });
@@ -72,11 +78,12 @@ In this example, custom options are used to do something else with whatever else
 grunt.initConfig({
   git_version: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      project: 'project-name',
+      version: 'v3.0.0',
+      short: true
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    test: {
+      dest: "test/release.text"
     },
   },
 });
